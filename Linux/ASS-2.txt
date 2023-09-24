@@ -1,0 +1,47 @@
+ASS-2
+
+
+6. Delete all files in family subdirectory.              
+       rm * family
+
+7. Delete friends subdirectory
+      rm -r friends
+
+8. Create user tom , bob , sam , prince
+        adduser tom
+        adduser bob
+        adduser sam
+        adduser prince
+
+9. Create Group dac , dbda ,ditiss
+          addgroup dac
+          addgroup dbda
+          addgroup ditiss
+
+10. add user
+	
+	Tom in dac
+	Bob in dbda
+	Sam in ditiss
+      
+     sudo usermod tom -g dac
+     sudo usermod bob-g dbda
+     sudo usermod sam -g ditiss
+
+11. login as prince and create iacsd directory  in /tmp and create 4 files in iacsd with name project-1 project-2 upto 4
+         su prince
+         mkdir iacsd 
+         touch project{1..4}.txt
+
+12. assign permissions to project files as below
+
+	Project-1 – tom should be owner of this   
+                   sudo chown tom project1.txt
+	Project-2 – dac should be owner of this   
+                    sudo chgrp dac project2.txt
+	Project-3 --- others should not have any permission but tom should have rw access
+                   sudo chown tom project3.txt           
+                     chmod 777 project3.txt
+	Project-4 – dbda group should have rwx permissions.
+                       chmod 777
+	

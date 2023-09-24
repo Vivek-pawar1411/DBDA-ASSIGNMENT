@@ -1,0 +1,41 @@
+one                                         addgorup one 
+	apple                               adduser apple
+	banana                              adduser banana
+      	cat                                 adduser cat
+	dog                                 adduser dog
+	elephant                            adduser elephant
+two
+                                     addgroup two
+	fish                           adduser fish    
+	gun                           adduser gun
+	horse                         adduser horse
+	icecream                       adduser icecream
+three
+                                  addgroup three
+	jelly                     adduser jelly
+	kitkat                    adduser kitkat
+	lolipop                   adduser lollipop
+	marshmallow               adduser marshmellow
+four 
+                                     addgroup four
+	new                         adduser new
+	oppo                        adduser  oppo
+	vivo                        adduser vivo
+	china                      adduser  china
+/home -> mkdir EVERYONE
+chmod 777 EVERYONE 
+Create a file with every user (whoami >> username.txt)
+
+oppo -> primary group change -> one      chgrp oppo  one
+vivo -> primary group change -> two      chgrp  vivo two
+
+jelly,kitkat, lolipop, marshmallow -> add these users to sudo group  
+           sudo adduser jelly
+           sudo adduser kitkat
+           sudo  adduser lollipop
+           sudo  adduser  marshmellow
+
+
+fish,gun -> add these users to one group as well (secondary group)
+                       sudo usermod fish -G one
+                       sudo  usermod gum -G two

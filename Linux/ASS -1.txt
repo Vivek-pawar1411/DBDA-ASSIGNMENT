@@ -1,0 +1,37 @@
+ASS -1
+
+1. In your home directory, create sets of empty practice files 
+
+Create 6 files with names of the form songsX.mp3.
+         touch songs{1..6}.mp3 
+Create 6 files with names of the form snapX.jpg.
+          touch snapX{1..6}.jpg
+Create 6 files with names of the form filmX.avi.
+          touch films{1..6}.avi 
+In each set, replace X with the numbers 1 through 6.
+
+2. From your home directory,
+Move songs file into your Music subdirectory.
+          mv songs{1..6}.mp3 ~/Music
+Move snap file into your Pictures subdirectory.
+         mv snapX{1..6}.jpg  ~/Pictures
+Move your movie files into Videos subdirectory  
+          mv films{1..6}.avi ~/Videos
+
+3. Create 3 subdirectories for organizing your files named friends,family,work
+               mkdir firneds
+               mkdir family
+               mkdir  work
+
+4. Copy files (all types ) containing numbers 1 and 2 to the friends folder.
+               cp songs{1..2}.mp3  ~/Desktop/friend
+                cp snapX{1..2}.jpg  ~/Desktop/family
+                cp films{1..2}.avi  ~/Desktop/work
+    Copy files (all types) containing numbers 3 and 4 to the family folder.
+                cp songs{3..4}.mp3  ~/Desktop/friend
+                cp snapX{3..4}.jpg  ~/Desktop/family
+                cp films{3..4}.avi  ~/Desktop/work
+    Copy files (all types) containing numbers 5 and 6 to the work folder.
+                cp songs{5..6}.mp3  ~/Desktop/friend
+                cp snapX{5..6}.jpg  ~/Desktop/family
+                cp films{5..6}.avi  ~/Desktop/work
