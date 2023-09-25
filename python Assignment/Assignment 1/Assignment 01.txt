@@ -1,0 +1,96 @@
+Assignment 
+
+
+Q1. What are components of a computer ?
+  there are various component of computer are given below 
+  RAM
+  ROM
+  Input /Output
+  CPU
+
+Q2. Which CPU are you using in you laptop / mobile / PC ?
+ CPU  Intel (R) Core i5-4570T CPU
+ mobile octa-core MediaTek Helio G95 processer
+
+Q3. What is size of RAM in your PC ?
+     RAM 12GB
+Q4. Who created python ? in which year ? where ?
+    Desgined by  Guido van Rossum 
+    In  Feb 20 1991
+    Where  Centrum Wiskunde & Informatica (CWI) in the Netherlands
+
+Q5. What are different implementations of Python ? Which implementation we are using ?
+ PyPy - Python in Python, includes a tracing JIT compiler.
+ Jython - Python in Java for the Java platform.
+ IronPython - Python in C# for the Common Language Runtime (CLR/. ...
+ GraalPython - Python in Java, using the Graal just-in-time compiler and the Truffle interpreter implementation framework
+  we using.
+we using Cpython Implementation
+
+ Q7. What is PVM 
+ Python Virtual Machine(PVM): The bytecode then goes into the main part of the conversion is the Python Virtual Machine(PVM).
+ 
+ Q8.WAP to Print "Hello IACSD" and write comment describing author of the program and date created?
+     print("hello IACSD")
+     # author Vivek pawar
+     # date 18/09/23
+
+ Q9.  Python is platform independent or not ? Which platforms python can run ?
+Yes, python is platform independent. Like we can Run the same code in different platforms without any changes.
+
+Q10.Why python is platform independent ? What makes it platform independent ?
+Platform independent refers to software that runs on a variety of operating systems or hardware platforms. It is the opposite of platform dependent, which refers to software that is only to run on one operating system or hardware platform.
+
+Q11. Q11. Find working of various functions (min 7) from math library of python which is provided as standard library. 
+https://docs.python.org/3/library/math.html
+
+import math
+print(math.factorial(5))
+print(math.sqrt(36))
+print(math.cbrt(27))
+print(math.lcm(15))
+print(math.gcd(20, 10))
+print(math.comb(60, 10))
+
+
+Q13. WAP using spyder IDE. Import math library and print the gcd, lcm of two numbers.
+import math
+a=int(input("Enter the sum"))
+n = int (input("Enter the num"))
+sum=(math.lcm(n,a))
+hum=(math.gcd(n,a))
+
+print("the lcm is ",sum)
+print("the gcd is ",hum)
+
+Q14. WAP using spyder IDE. Use math library. Try to find log of zero. Which error is given ? Also try to find square root of any negative number. What error is give?
+   import math
+   print(math.log(0))
+   print(math.sqrt(-25))
+   error =  ValueError: math domain error
+Q15.WAP to create a variable v1 and store any number. Find the square root of that number by using v1 in math.sqrt() function.   
+   
+import math
+ v1 = int(input("Enter the num"))
+ sum=(math.sqrt(v1))
+ print("the num is = ",sum)
+    
+Q16. Check where .pyc files are stored after you run the program for
+     The .pyc files are stored in the same directory as the corresponding .py files, and have the same name as the .
+     py files, except with a .pyc extension instead of .py
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
