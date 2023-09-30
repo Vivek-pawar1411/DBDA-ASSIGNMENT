@@ -1,0 +1,81 @@
+ 1. select * from emp
+where sal>2000 and comm>200
+
+2. select * from emp
+   where job='CLERK' or sal>2000;
+
+3. select * from emp
+   where sal=1250 or sal=1100 or sal=2850;
+
+4. select * from emp
+   where sal>1250 and sal<2850;
+5. select * from emp
+   where ename like '%AS';
+or
+	 select * from emp
+   where REGEXP_LIKE (ename,'AS$');
+6.  select * from emp
+   where ename like 'C%K';
+or
+	 select * from emp
+   where REGEXP_LIKE(ename,'^C.*K$')
+7. select * from emp
+   where REGEXP_LIKE(ename,'^..L.*M..$');
+or
+	 select * from emp
+   where ename like '__%L' and ename like 'M%__';
+8.select * from emp
+  where sal!=1250 ;
+9.select * from emp
+ where sal between 1250 and 2850;
+10.select * from emp
+where REGEXP_LIKE (job,'^[..CE].*k$');
+11.select * from emp
+where comm=null;
+12.select * from emp
+where sal=null and ename like '%S';
+13.select * from emp
+where REGEXP_LIKE(job,'5,');
+
+14. select * from emp
+where ename like '%A%';
+==========================================================================================
+=============================================================================================
+2.
+1.
+    select ename,sal,deptno
+    from emp
+   where deptno in (20,30,40);
+
+2. select ename,sal,sal+nvl(comm,0) +sal*0.10 netsal
+     from emp;
+     
+3.select ename,job name,hiredate+nvl
+  from emp
+   where hiredate < '1-jan-1986' and sal between 1200 and 2500;
+
+4.  select empno,ename,deptno,mgr
+     from emp
+    where mgr=7698;
+
+5. select ename,job,sal,deptno
+    from emp
+   where deptno=10 or deptno=30;
+
+6.  select ename,deptno,concat(concat(concat(ename,' , '),'  '),deptno) empinfo
+	from emp;
+7. select empno,ename job
+   from emp 
+    where mgr is null;
+
+8. select ename,deptno,hiredate
+	from emp
+	where hiredate in ('1-jan-81','31-mar-83')
+	order by hiredate;
+9. select * from emp
+   	where REGEXP_LIKE(job,'*AGE*');
+11. select * from emp
+   	where REGEXP_LIKE(ename,'^A.*S$|^.?N|[NS]$'); 
+12. select ename from emp
+	where REGEXP_LIKE(ename,'^_?$');
+          
