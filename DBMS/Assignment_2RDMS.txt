@@ -1,0 +1,155 @@
+1.To find all managers with salary >1500 
+  select job,sal from emp
+  where sal>1500 and job='MANAGER';
+
+2. list all employees with sal >1200 and < 2000 
+  select * from emp 
+  where sal>1200 and sal<2000;
+
+3. list all employees with sal is 1600 or sal is 800 or sal is 1900 
+
+  select * from emp 
+  where sal in (1600,800,1900);
+
+4.  list all employees with R at second last position in name
+	select * from emp
+	where REGEXP_LIKE (ename,'*R.$');
+
+ 5. List all employees with name starts with A and ends with N
+   select * from emp
+    where REGEXP_LIKE (ename,'^A.*N$');
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+ 2. 1. list all employees with salary > 1250 and dept no=30
+	select * from emp
+  where sal>1250 and deptno=30;	
+
+3. list all employees with salary >=1250 and <= 3000
+   	select * from emp
+  where sal between 1250 and 3000;	
+
+3. list all employees with salary >1250 and < 3000
+   select * from emp
+  where sal>1250 and sal<3000;	
+
+4. list all employees with salary either equal to 3000 or 1250 or 2500
+	 select * from emp
+  where sal in (3000,1250,2500);
+
+5. list all employee with name=SMITH
+	 select * from emp
+  where ename='SMITH';
+
+6. list all employees with name starting with S
+	 select * from emp
+         where REGEXP_LIKE (ename,'^S');
+
+7. list all employees with name ending with S
+	select * from emp
+         where REGEXP_LIKE (ename,'S$');
+
+8. list all employees with name contains I at 2nd position
+	select * from emp
+         where REGEXP_LIKE (ename,'^.I');
+
+9. list all employees with name starts with A ends witn N and somewhere in between L is there
+	select * from emp
+         where REGEXP_LIKE (ename,'^A.*L.*N$');
+
+10. list all employees with name starts with A and B at 3 rd position and P at second last position
+	select * from emp
+         where REGEXP_LIKE (ename,'^A.*.B.*P.$');
+
+11. List all employees with name starts with either A or starts with S or starts with W
+   select * from emp
+  where REGEXP_LIKE (ename,'^[A S W]');
+
+*+*+*+*+*++++**+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*
+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+**+*+*+*+*+*+*+*+*+*
+
+
+12. find max sal and min sal for each job
+	select job,max(sal),min(sal)
+	from emp
+	group by job;
+	
+13. find how many employess have not received commission
+          select count(*) from emp
+	  where comm is null;
+
+14. find sum of sal of all employees working in dept no 10
+	select sum(sal) from emp
+	  where deptno=10;
+
+15. find maximum salary,average sal for each job in every department
+	select deptno,job,max(sal),avg(sal)
+	from emp
+	group by deptno,job;
+ 
+16. find max salary for every department if deptno is > 15 and arrange data in deptno order.
+	select deptno,max(sal) from emp
+	where deptno>15 
+	group by deptno
+	order by deptno;
+	
+17. find sum salary for every department if sum is > 3000
+	select deptno,sum(sal)from emp
+	group by deptno
+        having sum(sal)>3000;
+	            
+18. list all department which has minimum 5 employees
+     select deptno,count(*) from emp
+      group by deptno
+	having count(*)>=5;
+19. count how many employees earn salary more than 2000 in each job
+      select sal,count(*) from emp
+	where sal>=2000       
+	group by sal;
+	
+s
+20. list all enames and jobs in small case letter
+      select  lower(ename)||'  '||lower(job) from emp;
+
+21. list all names and jobs so that the length of name should be 15 if it is smaller then add
+spaces to left
+          select lpad(ename || job,15,'_');
+
+22. display min sal,max sal, average sal for all employees working under same manager
+  select mgr,min(sal),max(sal),avg(sal)
+	from emp
+	where mgr is not null
+	group by mgr
+	order by mgr;
+
+23. find sum of total earnings(sal+comm), average of sal+comm for all employees who earn sal >2000 and work in either dept no 10 or 20
+ select deptno,sum(sal+nvl(comm,0)) totalearning,avg(sal+nvl(comm,0) avg,count(*)
+  from emp
+ where sal>2000 and deptno=10 or deptno=20
+group by deptno;
+
+24. list all employees who joined in Aug 1980 and salary is >1500 and < 2500
+   select * from emp
+    where extract(month from hiredate)=8 and extract(year from hiredate)=1980 and sal>1500 and sal<2000;
+
+25. list all employees joined in either aug or may or dec
+     select * from emp
+   where extract(month from hiredate)= 8 or extract(month from hiredate)= 5 or extract(month from hiredate)= 12;
+    
+26. display name and hiredate in dd/mm/yy format for all employees whose job is clerk and
+they earn some commission
+
+  select ename, to_char(hiredate,'dd/mm/yyyy')
+from emp
+  where job like 'CLERK'
+  where comm is not null;
+
+27. list empcode,empno,name and job for each employee. (note :empcode is 3 to 5 characters
+from name and last 2 characters of job) 
+    select substr(ename,3,5)||substr(ename,-2) empcode,empno,ename from emp;
+
+28. display thousand separator and $ symbol for commission if it is null then display it as 0 for all
+employees whose name starts with A and ends with N
+
+select empno,ename,to_char(nvl(comm,0),'$999999')dollar from emp;
