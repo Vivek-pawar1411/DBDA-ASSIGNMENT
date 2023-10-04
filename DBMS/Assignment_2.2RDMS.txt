@@ -1,0 +1,69 @@
+35. Update employee sal ---- increase sal of each employee by 15 % sal +comm, change the job
+to manager and mgr to 7777 for all employees in deptno 10.
+   UPDATE emp
+SET sal = sal + (sal * 0.15 + comm), job = 'MANAGER',mgr = 7777
+WHERE deptno = 10
+
+36. change job of smith to senior clerk
+   UPDATE EMP
+    SET JOB='SENIOR'
+   WHERE ENAME = 'SMITH';
+
+37. increase salary of all employees by 15% if they are earning some commission
+     UPDATE emp
+SET sal = sal + (sal * 0.15)
+where comm > 0;
+   
+38. list all employees with sal>smith's sal
+  select * from emp
+   where sal>(select sal from emp where ename='SMITH');
+
+39. list all employees who are working in smith's department
+    select * from emp
+    where deptno >(select deptno from emp where ename='SMITH');
+  
+41. delete all employees working in alan's department
+     delete from emp
+    where deptno = (select deptno from emp where ename='ALLEN' );
+
+42. change salary of Alan to the salary of Miller.
+        UPDATE EMP
+    SET SAL=(SELECT SAL FROM EMP WHERE ENAME='MILLER')
+   WHERE ENAME='ALLEN';
+
+43.change salary of all emplees who working in Wall's department to the salary of Miller.
+
+ UPDATE EMP
+  2  SET SAL=(SELECT SAL FROM EMP WHERE ENAME='MILLER')
+  3  WHERE DEPTNO=(SELECT DEPTNO FROM EMP WHERE ENAME='WARD');
+
+45. list all employees who earn more than average sal of dept 10
+      SELECT * FROM EMP
+   WHERE SAL >(SELECT AVG(SAL )FROM EMP WHERE DEPTNO=10);
+      
+47. list all employees who are working in purchase department
+       SELECT * FROM EMP
+  	WHERE JOB ='PURCHASE';
+
+48. list all employees who earn more than average salary of their own department
+      SELECT * FROM EMP E
+     WHERE SAL>(SELECT SAL FROM EMP D WHERE D.DEPTNO=E.DEPTNO);
+
+50.list all employees with salary > either Smith's salary or alan's sal
+   SELECT * FROM EMP
+   WHERE SAL>(SELECT MAX(SAL) FROM EMP WHERE ENAME IN('SMITH','ALLEN'));
+   
+51. display employee name and department
+ select empno,ename,e.deptno,d.deptno,dname
+   from emp e,dept d
+    where e.deptno=d.deptno;
+
+52. display empno,name,department name and grade (use emp,dept and salgrade table)
+     select empno,ename,dname,grade from emp,dept,salgrade;
+
+53. list all employees number,name, mgrno and manager name
+   select ename,empno,mgr,job from emp
+    where job='MANAGER';
+
+
+
