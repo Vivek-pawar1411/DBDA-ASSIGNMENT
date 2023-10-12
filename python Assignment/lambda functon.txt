@@ -1,0 +1,42 @@
+Given list of integers. Use map function to calculate square of all and store in list. Then print sum of all square values.
+
+def square(a):
+    return a*a
+l=[2,3,5,6,7,8,]
+a=list(map(square,l))
+print(a)
+
+Sort all the numbers in a list in descending order using lambda function
+l=[2,3,5,6,7,8,]
+l.sort(key=lambda x:-x)
+print(l)
+
+ Sort all the characters of given string using lambda function
+str1="student"
+a=list(str1)
+a.sort(key=lambda x:x)
+print(a)
+
+ Given list of strings, sort all the strings by last character of that string. . Use lambda function and normal function both.
+def lamb():
+    str1="student"
+    a=list(str1)
+    a.sort(key=lambda x:x)
+    print(a)
+    
+lamb()
+
+def sort():
+    str1="asfkfbfgnk"
+    g=list(str1)
+    g=sorted(str1)
+    print(g)
+    
+sort()
+
+ake comma separated numbers as input from the user. Split it in list of strings. Now convert every string in this list to float using map function
+
+s1="1,22,3,4,15,34,55"
+a=s1.split()
+b=map(int,a)
+print(b)
